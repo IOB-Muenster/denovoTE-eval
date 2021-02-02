@@ -1,0 +1,5 @@
+prefix: "seq_3"
+prefix_nest: "seqnest_3"
+seq_length: 6000000
+rep_fasta: "repeats.fa"
+rep_list: "repeats_list1"
