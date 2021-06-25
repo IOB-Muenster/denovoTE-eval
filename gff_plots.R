@@ -3,8 +3,7 @@
 
 #Load libraries
 library(ggplot2)
-require(gridExtra)
-library(RColorBrewer)
+library(gridExtra)
 
 # Set GFF files as variables
 gff_ref_file = "chr21.all.fil.gff"
