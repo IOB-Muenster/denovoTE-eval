@@ -1,5 +1,7 @@
-prefix: "seq_3"
-prefix_nest: "seqnest_3"
+prefix: "seq_4"
+prefix_nest: "seqnest_4"
 seq_length: 6000000
 rep_fasta: "repeats.fa"
-rep_list: "repeats_list1"
+rep_list: "repeats_list"
+seed: 1
+gc_content: 42
