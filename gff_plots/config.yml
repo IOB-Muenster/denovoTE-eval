@@ -1,0 +1,29 @@
+gff:
+        - "chr21.all.fil.gff"
+        - "chr21_RepeatScout_RMasker.gff"
+        - "chr21_RepeatModeler_RMasker.gff"
+        - "chr21_REPET_RMasker.gff"
+        - "chr21.phRaider.gff"
+        - "chr21.Pclouds.gff"
+        - "chr21.Red.gff"
+labels:
+        - "RepeatMasker"
+        - "REPET"
+        - "RepeatModeler"
+        - "RepeatScout"
+        - "phRaider"
+        - "Pclouds"
+        - "Red"
+colors:
+        - "#4DAF4A" #green
+        - "#E41A1C" #red
+        - "#984EA3" #purple
+        - "#377EB8" #blue
+        - "#F79616" #yellow
+        - "#08B2C4" #cyan
+        - "#C73302" #brown
+coor:
+        start: 9000000
+        step: 50000
+        repeat: 3
+
