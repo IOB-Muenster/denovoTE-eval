@@ -75,7 +75,7 @@ Scripts to simulate a DNA sequence with TEs with different degrees of divergency
 #### Script to calculate the Matthews Correlation Coefficient (comparing two GFF files)
 **repeat_analysis.py** : script that compares the gff of an annotation to a reference and outputs the percent annotated for each entry, a global confusion matrix and the Matthews Correlation Coefficient
 
-*e.g.:* ```./repeat_analysis.py reference.gff repeats.gff```
+*e.g.:* ```./repeat_analysis.py reference.gff repeats.gff 41500000``` *(genome size in nucleotides)*
 
 ---
 
