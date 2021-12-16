@@ -29,7 +29,7 @@ def compare_gff(ref_list, gff_cmp):
             end  = int(elem[4])
             pos_cmp += end - start +1
             get_result = 0
-            for x in xrange(s, len_list):
+            for x in range(s, len_list):
                 ref_start = ref_list[x][1]
                 ref_end = ref_list[x][2]
                 if start >= ref_start and end <= ref_end:
@@ -61,22 +61,22 @@ def get_counts(ref_list):
 def print_results(ref_list):
     for i in ref_list:
         if i[3] <= 0:
-            print i[0], 0
+            print(i[0], 0)
         else:
-            print "\t".join([i[0], "{0:.3f}".format(i[3]/(i[2]-i[1] +1.0))])
-    print "\n"
+            print("\t".join([i[0], "{0:.3f}".format(i[3]/(i[2]-i[1] +1.0))]))
+    print("\n")
     tpos,fneg = get_counts(ref_list)
     neg_ref = seq_len - pos_ref
     fpos = pos_cmp - tpos
     tneg = neg_ref - fpos 
-    print pos_cmp, seq_len
-    print "P: " + str(pos_ref)
-    print "N: " + str(neg_ref)
-    print "TP: " + str(tpos) + "\t TPR: "+ "{0:.3f}".format(float(tpos)/pos_ref)
-    print "TN: " + str(tneg) + "\t TNR: "+ "{0:.3f}".format(float(tneg)/neg_ref)
-    print "FP: " + str(fpos) + "\t FPR: "+ "{0:.3f}".format(float(fpos)/neg_ref)
-    print "FN: " + str(fneg) + "\t FNR: "+ "{0:.3f}".format(float(fneg)/pos_ref)
-    print "MCC: " + str( (tpos*tneg - fpos*fneg)/sqrt((tpos+fpos)*(tpos+fneg)*(tneg+fpos)*(tneg+fneg)) )
+    print(pos_cmp, seq_len)
+    print("P: " + str(pos_ref))
+    print("N: " + str(neg_ref))
+    print("TP: " + str(tpos) + "\t TPR: "+ "{0:.3f}".format(float(tpos)/pos_ref))
+    print("TN: " + str(tneg) + "\t TNR: "+ "{0:.3f}".format(float(tneg)/neg_ref))
+    print("FP: " + str(fpos) + "\t FPR: "+ "{0:.3f}".format(float(fpos)/neg_ref))
+    print("FN: " + str(fneg) + "\t FNR: "+ "{0:.3f}".format(float(fneg)/pos_ref))
+    print("MCC: " + str( (tpos*tneg - fpos*fneg)/sqrt((tpos+fpos)*(tpos+fneg)*(tneg+fpos)*(tneg+fneg)) ))
 
 def main():
     gff = sys.argv[1]
@@ -87,4 +87,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
