@@ -17,7 +17,7 @@ Datasets used for testing the TE de novo detection tools:
 
 * Python 3.x
 
-##### Python modinsertedules :
+##### Python modules :
 * Biopython
 * NumPy
 * PyYAML
