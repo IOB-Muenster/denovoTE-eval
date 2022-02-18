@@ -129,7 +129,7 @@ def generate_nests(repeats, gff, seq, prefix):
 def print_data(prefix, seq, new_gff):
     fasta_out = open(prefix + "_out_sequence_nest.fasta", "w")
     fasta_out.write( ">sequence_nest\n" )
-    for n in xrange(0,len(seq),100):
+    for n in range(0,len(seq),100):
         fasta_out.write(str(seq[n:n+100]) + "\n")
     fasta_out.close()
     gff_out = open(prefix + "_out_repeats_nest.gff", "w")
