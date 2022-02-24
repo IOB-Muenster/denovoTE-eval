@@ -72,6 +72,14 @@ Scripts to simulate a DNA sequence with TEs with different degrees of divergency
 
 ---
 
+#### Formatting RepeatMasker outputs as GFF 
+* As an example a RepeatMasker output can be transformed into a GFF file using the following command:
+*  ```awk 'OFS="\t" {print $5, "software_tool", "any_key", $6, $7, ".", "." , ".", "ID="$10"_"$11}' rmasker.output > rmasker.gff```
+*  Then, to avoid reporting twice overlaped regions, they must be merged (for example using [bedtools merge](https://bedtools.readthedocs.io/en/latest/content/tools/merge.html) command)  :
+*  ```bedtools merge -i rmasker.gff -c 2,3,7,8,9 -o distinct | awk 'OFS="\t" {print $1, $4, $5, $2, $3, $6, $7, $8}' | sed 's/ID=//2g' > rmasker.merged.gff```
+
+---
+
 #### Script to calculate the Matthews Correlation Coefficient (comparing two GFF files)
 **repeat_analysis.py** : script that compares the gff of an annotation to a reference and outputs the percent annotated for each entry, a global confusion matrix and the Matthews Correlation Coefficient
 
@@ -96,6 +104,7 @@ Scripts to simulate a DNA sequence with TEs with different degrees of divergency
 This script allows to plot coordinates from a GFF file as colored line segments in a track. Multiple tracks can be used to plot coordinates from multiple GFF files, and alos multiple plots are allowed. 
 
 *Important: The GFF files must have only the lines from the coordinates that are going to be plotted, as the script expects only the informative lines.*
+
 
 The idea behind this kind of plot is to have a fast visual comparison of different results obtained by different software tools on the same dataset.
 
